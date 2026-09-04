@@ -35,7 +35,14 @@ def load_model():
         except Exception as err:
             print(f"Failed to auto-download weights from Hugging Face: {err}")
 
-    model_path = best_path if os.path.exists(best_path) else final_path
+    model_path = best_path if os.path.exists(best_path) else (final_path if os.path.exists(final_path) else None)
+    if model_path is None or not os.path.exists(model_path):
+        from src.models.unet import UNet
+        print("Model checkpoint not yet available. Initializing standard UNet architecture...")
+        model = UNet(in_channels=3, out_channels=3).to(device)
+        model.eval()
+        return model, device
+
     model = src_load_model(model_path, device)
     return model, device
 
