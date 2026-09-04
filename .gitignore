@@ -1,4 +1,54 @@
+# Python
 __pycache__/
 *.py[cod]
-*.ipynb_checkpoints/
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
 .env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Datasets
+data/raw/
+data/processed/
+
+# Model Checkpoints (Files >100MB are blocked by GitHub)
+*.pth
+*.pt
+*.pwf
+*.onnx
+outputs/checkpoints/
+
+# Ad-hoc debug/test images generated in root of outputs/
+outputs/*.png
+!outputs/training_loss.png
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
