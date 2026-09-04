@@ -1,12 +1,12 @@
 import os
 import sys
+import runpy
 
-# Ensure root and app directories are on sys.path
 root_dir = os.path.dirname(os.path.abspath(__file__))
 app_dir = os.path.join(root_dir, "app")
-for path in [root_dir, app_dir]:
-    if path not in sys.path:
-        sys.path.insert(0, path)
+for p in [root_dir, app_dir]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
-# Run the Streamlit application
-from app.app import *
+target_script = os.path.join(app_dir, "app.py")
+runpy.run_path(target_script, run_name="__main__")
