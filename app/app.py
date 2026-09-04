@@ -3,7 +3,11 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 
-from utils import load_model, predict_image
+try:
+    from utils import load_model, predict_image
+except ImportError:
+    from app.utils import load_model, predict_image
+
 
 # ==========================================================
 # Page Configuration

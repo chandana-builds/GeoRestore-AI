@@ -1,3 +1,14 @@
+---
+title: GeoRestore AI
+emoji: 🌍
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: 1.35.0
+app_file: app.py
+pinned: false
+---
+
 # 🌍 GeoRestore AI: Satellite Imagery Cloud & Haze Removal
 
 GeoRestore AI is a deep learning and physics-guided computer vision framework designed to detect, penetrate, and reconstruct cloudy or hazy optical satellite imagery. It restores clear surface textures while preserving non-cloud terrain, water bodies, and vegetation.
